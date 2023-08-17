@@ -7,7 +7,6 @@ import Image from 'next/image';
 import BrandLogo from "/public/assets/images/BrandLogo.png";
 
 const Footer = () => {
-
     return (
         <footer className='footer py-5'>
             <div className="d-flex flex-sm-row flex-column justify-content-center align-items-center">

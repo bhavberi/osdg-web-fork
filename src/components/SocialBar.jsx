@@ -1,6 +1,4 @@
 'use client';
-import Link from 'next/link';
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faGithub, faLinkedin, faInstagram } from "@fortawesome/free-brands-svg-icons";
 

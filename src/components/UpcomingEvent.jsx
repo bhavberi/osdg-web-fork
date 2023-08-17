@@ -1,5 +1,3 @@
-import 'css/page.module.css';
-
 const UpcomingEvents = ({ eventData }) => {
     return (
         <div className="card acrylic" style={{ maxWidth: "250px" }}>

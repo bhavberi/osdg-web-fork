@@ -1,5 +1,4 @@
 'use client';
-
 import Image from 'next/image';
 import BrandLogo from "/public/assets/images/BrandLogo.png";
 
