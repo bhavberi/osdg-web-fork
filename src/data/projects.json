@@ -18,8 +18,18 @@
     "category": "OSDG"
   },
   {
+    "projectName": "Discord-CAS",
+    "maintainers": ["Ankith Raghupathi Pai", "Udith Krishna M Nair"],
+    "technologies": ["Python", "discord.py", "MongoDB", "JavaScript", "Express"],
+    "description": "Tool for user verification via CAS on IIIT-related discord servers",
+    "image": "",
+    "link": "https://github.com/OSDG-IIITH/Discord-CAS",
+    "category": "OSDG"
+  },
+  {
     "projectName": "ReviewIIIT",
     "maintainers": [
+      "Ankith Raghupathi Pai",
       "Agyeya Singh Negi",
       "Abhiram Tilak Potula",
       "Shlok Amit Sand"
