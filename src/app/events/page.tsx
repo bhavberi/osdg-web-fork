@@ -1,55 +1,45 @@
+"use client";
+
 import PhotoAlbum from "react-photo-album";
-import fs from "fs";
-import path from "path";
-import sharp from "sharp";
+import { getEventImages, getEventsMetadata } from "@/app/lib";
+import type { photoData } from "@/app/lib";
+import { useState, useEffect } from "react";
 
-const getEventImages = async (folderPath: string) => {
-  const imagesDir = path.join(
-    process.cwd(),
-    "public",
-    "event_pictures",
-    folderPath
-  );
+export default function Events() {
+  const [images, setImages] = useState<photoData[]>([]);
 
-  const imageFiles = fs.readdirSync(imagesDir);
-
-  const imageData = await Promise.all(
-    imageFiles.map(async (file) => {
-      const imagePath = path.join(imagesDir, file);
-      const relativePath = path.relative(
-        path.join(process.cwd(), "public"),
-        imagePath
-      );
-      const metadata = await sharp(imagePath).metadata();
-      console.log(relativePath);
-      return {
-        src: relativePath,
-        width: metadata.width ?? 0,
-        height: metadata.height ?? 0,
-      };
-    })
-  );
-
-  return imageData;
-};
-
-export default async function Events() {
-  const events = [
-    "2024-04-13_open-source-saturday",
-    "2024-04-07_intro-to-latex",
-    "2024-03-23_open-source-saturday",
-    "2024-03-15_frieday-rice",
-    "2024-01-20_hackiiit",
-    "2024-01-17_intro-to-gsoc",
-    "2022-10-27_richard-stallman-talk",
-  ];
-
-  const imagePromises = await Promise.all(events.map(getEventImages));
-  const images = imagePromises.reduce((acc, cur) => acc.concat(cur), []);
+  useEffect(() => {
+    getEventsMetadata().then((data) => {
+      Promise.all(
+        Object.entries(data).map(([folderPath, event]) =>
+          getEventImages(folderPath, event)
+        )
+      ).then((imagePromises) => {
+        setImages(imagePromises.reduce((acc, cur) => acc.concat(cur), []));
+      });
+    });
+  }, []);
 
   return (
     <main className="p-12">
-      <PhotoAlbum layout="masonry" photos={images} />
+      {images.length === 0 ? (
+        <h1>Loading</h1>
+      ) : (
+        <PhotoAlbum
+          layout="masonry"
+          photos={images}
+          renderPhoto={({ photo, wrapperStyle, renderDefaultPhoto }) => (
+            <a
+              href={photo.href}
+              style={wrapperStyle}
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              {renderDefaultPhoto({ wrapped: true })}
+            </a>
+          )}
+        />
+      )}
     </main>
   );
 }

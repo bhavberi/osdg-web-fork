@@ -1,0 +1,59 @@
+{
+    "2024-04-13_open-source-saturday": {
+        "name": "Open Source Saturday",
+        "date": "2024-04-13",
+        "event": "https://clubs.iiit.ac.in/events/6613ee28a5e4a1ad0ec52bef",
+        "blacklist": [
+            "poster.png"
+        ]
+    },
+    "2024-04-07_intro-to-latex": {
+        "name": "Intro to LaTeX: Theory Group x OSDG",
+        "date": "2024-04-07",
+        "event": "https://clubs.iiit.ac.in/events/660a971426a071a514c2269e",
+        "blacklist": [
+            "pic_2.jpeg",
+            "poster.png"
+        ]
+    },
+    "2024-03-23_open-source-saturday": {
+        "name": "Open Source Saturday",
+        "date": "2024-03-23",
+        "event": "https://clubs.iiit.ac.in/events/65f9c501c0c6da3e416f6773",
+        "blacklist": [
+            "poster.png"
+        ]
+    },
+    "2024-03-15_frieday-rice": {
+        "name": "Frieday Rice: Hyprland",
+        "date": "2024-03-15",
+        "event": "https://clubs.iiit.ac.in/events/65ec9646d75a4d9e9684f013",
+        "blacklist": [
+            "pic_3.jpeg",
+            "poster.png"
+        ]
+    },
+    "2024-01-20_hackiiit": {
+        "name": "HackIIIT",
+        "date": "2024-01-20",
+        "event": "https://clubs.iiit.ac.in/events/65a2803a7327069b5a5e2006",
+        "blacklist": [
+            "pic_2.jpeg",
+            "poster.png"
+        ]
+    },
+    "2024-01-17_intro-to-gsoc": {
+        "name": "Intro to GSoC",
+        "date": "2024-01-17",
+        "event": "https://clubs.iiit.ac.in/events/65a4e3fe7327069b5a5e2008",
+        "blacklist": [
+            "poster.png"
+        ]
+    },
+    "2022-10-27_richard-stallman-talk": {
+        "name": "Talk by Richard Stallman",
+        "date": "2022-10-27",
+        "event": "https://clubs.iiit.ac.in/events/64c397e49b09c82d7dbceb36",
+        "blacklist": []
+    }
+}
