@@ -23,7 +23,9 @@ export default function Events() {
   return (
     <main className="p-12">
       {images.length === 0 ? (
-        <h1>Loading</h1>
+        <h1 className="min-h-screen flex justify-center items-center">
+          Loading
+        </h1>
       ) : (
         <PhotoAlbum
           layout="masonry"
