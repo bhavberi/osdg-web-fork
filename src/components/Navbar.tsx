@@ -15,6 +15,9 @@ export default function Navbar() {
         <Link className={linkClass} href="/projects">
           Projects
         </Link>
+        <Link className={linkClass} href="/events">
+          Events
+        </Link>
         <Link className={linkClass} href="/team">
           Team
         </Link>
