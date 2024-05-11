@@ -32,12 +32,21 @@ export default function Events() {
           photos={images}
           renderPhoto={({ photo, wrapperStyle, renderDefaultPhoto }) => (
             <a
+              className="group relative"
               href={photo.href}
-              style={wrapperStyle}
               target="_blank"
               rel="noreferrer noopener"
             >
-              {renderDefaultPhoto({ wrapped: true })}
+              <div
+                style={wrapperStyle}
+                className="filter brightness-100 blur-0 group-hover:blur-md group-hover:brightness-50 transition-all"
+              >
+                {renderDefaultPhoto({ wrapped: true })}
+              </div>
+              <div className="absolute inset-0 flex flex-col items-center justify-center transition-opacity opacity-0 group-hover:opacity-100">
+                <p className="text-white text-center">{photo.date}</p>
+                <p className="text-white text-center">{photo.name}</p>
+              </div>
             </a>
           )}
         />
